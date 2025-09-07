@@ -9,16 +9,12 @@ This document describes the "v3.0" JSON structure used to bootstrap a Reference 
 {
     "version": "3.0",
     "session": {
-        \.\.\.
     },
     "presentation": {
-        \.\.\.
     },
     "sources": [
-        \.\.\.
     ],
     "media": {
-        \.\.\.
     }
 }
 ```
@@ -99,7 +95,7 @@ Field describes the media resources that are available to the session
 | `drop_frame`  | Indicates whether frame rate is drop frame or non drop frame. If unspecified, a value of `false` is assumed                                                              | Boolean                                                                        |              Opt               |              Opt               |
 | `ffom`        | Indicates the timecode of the First Frame of Media (FFOM). If unspecified, `00:00:00:00` is assumed                                                                      | Timecode                                                                       |              Opt               |              Opt               |
 
-> [!NOTE:]
+> [!NOTE]
 > For HLS media, the `frame_rate` value is retrieved from the M3U8.
 
 ## Sidecar Entry
@@ -206,9 +202,7 @@ Field contains information about how the player should be configured. This inclu
 | `files`          | Listing of files. The following information can be associated with a file:<ul><li>`filename`</li><li>`description` (optional)</li><li>`url`</li></ul> | Array of Complex Object                                                                                                    |      Req      |                                                                            | |
 
 > [!NOTE]
-> The `data` field is only applicable when the `type` is `json` and is then required.
-
-> [!NOTE]
+> The `data` field is only applicable when the `type` is `json` and is then required.  
 > The `files` field is only applicable when the `type` is `file_list` and is then required.
 
 
