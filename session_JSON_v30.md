@@ -5,7 +5,7 @@
 
 This document describes the "v3.0" JSON structure used to bootstrap a Reference Player session. A session JSON consists of five top-level fields and is structured as follows
 
-```json
+```
 {
     "version": "3.0",
     "session": {
