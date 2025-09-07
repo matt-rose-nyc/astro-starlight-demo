@@ -5,20 +5,20 @@
 
 This document describes the "v3.0" JSON structure used to bootstrap a Reference Player session. A session JSON consists of five top-level fields and is structured as follows
 
-```
+```json
 {
     "version": "3.0",
     "session": {
-        ...
+        \.\.\.
     },
     "presentation": {
-        ...
+        \.\.\.
     },
     "sources": [
-        ...
+        \.\.\.
     ],
     "media": {
-        ...
+        \.\.\.
     }
 }
 ```
@@ -48,7 +48,8 @@ Field contains information related to the overall session
 | `previous`  | URI used to retrieve the previous session                                                                                                                                                                | URI                                                                                                                   |      Opt      |
 | `services`  | Object which provides information about backend resources (e.g. "services") that are used by the player. The object typically consists of multiple maps which each key identifying a specific "service"  | Complex Object                                                                                                        |      Opt      |
 
-> **NOTE:** `media_authentication` should be declared on the `services` property in order to use the Reference Player's "out-of-the-box" media authentication capabilities 
+> [!NOTE]
+> `media_authentication` should be declared on the `services` property in order to use the Reference Player's "out-of-the-box" media authentication capabilities 
 
 ## Media Authentication (`media_authentication`)
 
@@ -98,7 +99,8 @@ Field describes the media resources that are available to the session
 | `drop_frame`  | Indicates whether frame rate is drop frame or non drop frame. If unspecified, a value of `false` is assumed                                                              | Boolean                                                                        |              Opt               |              Opt               |
 | `ffom`        | Indicates the timecode of the First Frame of Media (FFOM). If unspecified, `00:00:00:00` is assumed                                                                      | Timecode                                                                       |              Opt               |              Opt               |
 
-> [!NOTE:] For HLS media, the `frame_rate` value is retrieved from the M3U8.
+> [!NOTE:]
+> For HLS media, the `frame_rate` value is retrieved from the M3U8.
 
 ## Sidecar Entry
 
@@ -120,7 +122,8 @@ Field contains information about how the player should be configured. This inclu
 | `info_tabs`            | Field defines a listing of tabs that are presented in the upper right of the player                                              | Array of Info Tab            |      Opt      |      
 | `segmentation_actions` | Field specifies a list of Segmentation related actions that should be exposed in the "action" menu associated with a marker list | Array of Segmentation Action |      Opt      |
 
-> [!NOTE:] If the `segmentation_actions` field is not specified, no (additional) actions are defined on a marker list.
+> [!NOTE]
+> If the `segmentation_actions` field is not specified, no (additional) actions are defined on a marker list.
 
 ## Layout
 
@@ -131,7 +134,8 @@ Field contains information about how the player should be configured. This inclu
 | `annotations`          | Flag indicating whether the UX should support the capture of time-dependent annotations       | Boolean  |      Opt      |
 | `annotation_threading` | Flag indicating whether annotations should support threading                                  | Boolean  |      Opt      |
 
-> [!NOTE:] If the `approval`, `annotations` or `annotation_threading` fields are not specified, a value of `false` is assumed for the field.
+> [!NOTE]
+> If the `approval`, `annotations` or `annotation_threading` fields are not specified, a value of `false` is assumed for the field.
 
 ## Timeline
 
@@ -201,9 +205,11 @@ Field contains information about how the player should be configured. This inclu
 | `data`           | Data payload to be visualized                                                                                                                         | Complex Object                                                                                                             |      Req      |
 | `files`          | Listing of files. The following information can be associated with a file:<ul><li>`filename`</li><li>`description` (optional)</li><li>`url`</li></ul> | Array of Complex Object                                                                                                    |      Req      |                                                                            | |
 
-> [!NOTE:] The `data` field is only applicable when the `type` is `json` and is then required.
+> [!NOTE]
+> The `data` field is only applicable when the `type` is `json` and is then required.
 
-> [!NOTE:] The `files` field is only applicable when the `type` is `file_list` and is then required.
+> [!NOTE]
+> The `files` field is only applicable when the `type` is `file_list` and is then required.
 
 
 ## Segmentation Action Entry
